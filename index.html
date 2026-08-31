@@ -234,15 +234,63 @@
             </div>
         </section>
 
-        <!-- Call to Action Banner -->
-        <section class="cta-banner">
-            <div class="container cta-container reveal">
-                <div class="cta-text">
-                    <h2>Ready to start your project?</h2>
-                    <p>Contact us today to discuss your vision and get a fair, honest quote.</p>
-                </div>
-                <div class="cta-buttons">
-                    <a href="tel:5555555555" class="btn btn-primary btn-large">Call Now</a>
+        <!-- Contact Form Section -->
+        <section id="contact" class="contact-section section-padding">
+            <div class="container reveal">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h2>Ready to start your project?</h2>
+                        <p>Fill out the form below or contact us directly to discuss your vision and get a fair, honest quote.</p>
+                        
+                        <div class="contact-methods">
+                            <a href="tel:5555555555" class="contact-method-card">
+                                <strong>Call Us Directly</strong>
+                                <span>(555) 555-5555</span>
+                            </a>
+                            <a href="mailto:info@crosstimbersconstruction.com" class="contact-method-card">
+                                <strong>Send an Email</strong>
+                                <span>info@crosstimbersconstruction.com</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-container card-elevated">
+                        <form action="https://formspree.io/f/PLACEHOLDER" method="POST" class="lead-form">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="project-type">Project Type</label>
+                                <select id="project-type" name="project-type" required>
+                                    <option value="" disabled selected>Select a project type...</option>
+                                    <option value="New Build">New Custom Home</option>
+                                    <option value="Remodel">Major Remodel</option>
+                                    <option value="Addition">Addition / Porch</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Project Details</label>
+                                <textarea id="message" name="message" rows="4" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-full">Request a Quote</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
