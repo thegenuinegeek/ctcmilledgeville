@@ -376,6 +376,11 @@ ul {
     flex-wrap: wrap;
 }
 
+.hero-actions .btn {
+    flex: 1;
+    min-width: 200px; /* Ensures they don't get too squished before wrapping */
+}
+
 /* --- Services Section (Editorial Layout) --- */
 .services {
     background-color: var(--clr-gray-light);
