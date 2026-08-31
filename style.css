@@ -451,6 +451,7 @@ ul {
     padding: var(--space-xl) var(--space-lg);
     border-radius: var(--border-radius);
     box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    overflow: hidden;
 }
 
 .card-elevated h3 {
