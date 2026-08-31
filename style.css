@@ -371,14 +371,16 @@ ul {
 }
 
 .hero-actions {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: var(--space-md);
-    flex-wrap: wrap;
+    width: 100%;
+    max-width: 600px;
 }
 
 .hero-actions .btn {
-    flex: 1;
-    min-width: 200px; /* Ensures they don't get too squished before wrapping */
+    width: 100%;
+    text-align: center;
 }
 
 /* --- Services Section (Editorial Layout) --- */
@@ -803,5 +805,9 @@ ul {
     .cta-container {
         flex-direction: column;
         text-align: center;
+    }
+    
+    .hero-actions {
+        grid-template-columns: 1fr;
     }
 }
