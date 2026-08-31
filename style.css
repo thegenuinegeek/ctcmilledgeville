@@ -378,7 +378,7 @@ ul {
 
 /* --- Services Section (Editorial Layout) --- */
 .services {
-    background-color: #cbd5e1; /* Soft steel gray */
+    background-color: var(--clr-gray-light);
 }
 
 .section-header {
@@ -447,10 +447,22 @@ ul {
 }
 
 .card-elevated {
-    background-color: var(--clr-white);
+    background-color: var(--clr-gray-dark);
     padding: var(--space-xl) var(--space-lg);
     border-radius: var(--border-radius);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.card-elevated h3 {
+    color: var(--clr-white);
+}
+
+.card-elevated p {
+    color: var(--clr-gray-light);
+}
+
+.card-elevated .oversized-number {
+    color: rgba(255,255,255,0.06);
 }
 
 /* --- Reviews Section --- */
