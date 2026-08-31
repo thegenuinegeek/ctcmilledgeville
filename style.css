@@ -462,7 +462,14 @@ ul {
 }
 
 .card-elevated .oversized-number {
-    color: rgba(255,255,255,0.06);
+    color: rgba(255,255,255,0.15);
+    z-index: 0;
+}
+
+.card-elevated h3,
+.card-elevated p {
+    position: relative;
+    z-index: 1;
 }
 
 /* --- Reviews Section --- */
