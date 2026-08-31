@@ -446,6 +446,97 @@ ul {
     z-index: 2;
 }
 
+.card-elevated {
+    background-color: var(--clr-white);
+    padding: var(--space-xl) var(--space-lg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+/* --- Reviews Section --- */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+}
+
+.review-card {
+    background: var(--clr-white);
+    padding: var(--space-lg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border-top: 4px solid #4285F4; /* Google Blue */
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+    position: relative;
+}
+
+.reviewer-initial {
+    width: 40px;
+    height: 40px;
+    background-color: var(--clr-accent-wood);
+    color: var(--clr-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: 700;
+    font-family: var(--font-heading);
+}
+
+.reviewer-info h4 {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--clr-navy);
+}
+
+.stars {
+    color: #FBBC04; /* Google Gold */
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+}
+
+.google-g {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+}
+
+.google-rating {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.google-rating .rating-number {
+    font-size: 3rem;
+    font-weight: 800;
+    font-family: var(--font-heading);
+    color: var(--clr-navy);
+    line-height: 1;
+}
+
+.google-rating .review-count {
+    font-size: 0.9rem;
+    color: var(--clr-gray-dark);
+    margin-top: 0.5rem;
+}
+
+.review-text {
+    font-style: italic;
+    color: var(--clr-charcoal);
+    font-size: 0.95rem;
+}
+
 /* --- About Section --- */
 .about-grid {
     display: grid;
@@ -490,7 +581,7 @@ ul {
     border-radius: var(--border-radius);
     overflow: hidden;
     cursor: pointer;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.25);
 }
 
 .portfolio-item img {
