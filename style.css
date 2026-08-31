@@ -451,7 +451,6 @@ ul {
     padding: var(--space-xl) var(--space-lg);
     border-radius: var(--border-radius);
     box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-    overflow: hidden;
 }
 
 .card-elevated h3 {
@@ -463,7 +462,8 @@ ul {
 }
 
 .card-elevated .oversized-number {
-    color: rgba(255,255,255,0.15);
+    color: var(--clr-accent-wood);
+    opacity: 0.6;
     z-index: 0;
 }
 
