@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- TODO: update to the client's real domain at launch; add service/city pages as they're built -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://thegenuinegeek.github.io/ctcmilledgeville/</loc>
+        <lastmod>2026-10-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+</urlset>

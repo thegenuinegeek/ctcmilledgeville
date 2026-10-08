@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (navToggle && mainNav) {
         navToggle.addEventListener('click', () => {
-            mainNav.classList.toggle('active');
+            const isOpen = mainNav.classList.toggle('active');
+            navToggle.setAttribute('aria-expanded', String(isOpen));
         });
     }
 
@@ -25,6 +26,17 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Story Read More Toggle
+    const storyToggleBtn = document.getElementById('storyToggleBtn');
+    const storyHiddenContent = document.getElementById('storyHiddenContent');
+    
+    if (storyToggleBtn && storyHiddenContent) {
+        storyToggleBtn.addEventListener('click', () => {
+            const isExpanded = storyHiddenContent.classList.toggle('expanded');
+            storyToggleBtn.textContent = isExpanded ? 'Show Less' : 'Read Full Story';
+        });
+    }
 
     // Scroll reveal animations
     const revealElements = document.querySelectorAll('.reveal');

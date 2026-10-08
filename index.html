@@ -3,12 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cross Timbers Construction | Custom Homes & Remodels in Middle Georgia</title>
-    <meta name="description" content="Cross Timbers Construction builds quality custom homes, remodels, and additions in Baldwin, Jones, Wilkinson, Hancock, and Putnam counties.">
+    <title>Custom Home Builder in Milledgeville & Middle GA | Cross Timbers Construction</title>
+    <meta name="description" content="Custom homes, remodels, and additions in Milledgeville, Gray, Eatonton, Gordon, Sparta & Irwinton, GA. Quality craftsmanship, fair pricing, honest communication. Call for a free quote.">
+    <!-- TODO: update canonical / og:url / og:image to the client's real domain at launch -->
+    <link rel="canonical" href="https://thegenuinegeek.github.io/ctcmilledgeville/">
+    <meta name="theme-color" content="#1B2A47">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='12' fill='%231B2A47'/%3E%3Ctext x='50' y='66' font-family='Arial,sans-serif' font-size='46' font-weight='800' fill='%23D97736' text-anchor='middle'%3ECT%3C/text%3E%3C/svg%3E">
+
+    <!-- Open Graph / social sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Cross Timbers Construction">
+    <meta property="og:title" content="Cross Timbers Construction | Custom Home Builder in Middle Georgia">
+    <meta property="og:description" content="Quality custom homes, remodels, and additions at a fair price in Milledgeville, Gray, Eatonton and surrounding Middle Georgia communities.">
+    <meta property="og:url" content="https://thegenuinegeek.github.io/ctcmilledgeville/">
+    <meta property="og:image" content="https://thegenuinegeek.github.io/ctcmilledgeville/images/eatonton-georgia-new-build1.jpg">
+    <meta property="og:image:alt" content="New custom home built by Cross Timbers Construction in Eatonton, Georgia">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Performance: fetch the hero image and fonts early -->
+    <link rel="preload" as="image" href="images/ctdifference.webp" type="image/webp" fetchpriority="high">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <!-- Only hide .reveal content when JS is running, so crawlers / no-JS users always see it -->
+    <script>document.documentElement.classList.add('js');</script>
+
+    <!-- Local SEO structured data (placeholder phone/address until launch) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "GeneralContractor",
+        "@id": "https://thegenuinegeek.github.io/ctcmilledgeville/#business",
+        "name": "Cross Timbers Construction",
+        "description": "Custom home builder offering new home construction, large-scale remodels, and custom additions in Middle Georgia.",
+        "url": "https://thegenuinegeek.github.io/ctcmilledgeville/",
+        "image": "https://thegenuinegeek.github.io/ctcmilledgeville/images/eatonton-georgia-new-build1.jpg",
+        "telephone": "+1-555-555-5555",
+        "email": "info@crosstimbersconstruction.com",
+        "priceRange": "$$",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Gray",
+            "addressRegion": "GA",
+            "addressCountry": "US"
+        },
+        "areaServed": [
+            { "@type": "City", "name": "Milledgeville, GA" },
+            { "@type": "City", "name": "Gray, GA" },
+            { "@type": "City", "name": "Eatonton, GA" },
+            { "@type": "City", "name": "Gordon, GA" },
+            { "@type": "City", "name": "Irwinton, GA" },
+            { "@type": "City", "name": "Sparta, GA" },
+            { "@type": "AdministrativeArea", "name": "Baldwin County, GA" },
+            { "@type": "AdministrativeArea", "name": "Jones County, GA" },
+            { "@type": "AdministrativeArea", "name": "Wilkinson County, GA" },
+            { "@type": "AdministrativeArea", "name": "Hancock County, GA" },
+            { "@type": "AdministrativeArea", "name": "Putnam County, GA" }
+        ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Construction Services",
+            "itemListElement": [
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "New Home Construction" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Home Remodeling" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Kitchen Remodeling" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bathroom Remodeling" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Home Additions" } }
+            ]
+        }
+    }
+    </script>
 </head>
 <body>
 
@@ -16,17 +81,17 @@
     <header class="site-header">
         <div class="container header-container">
             <div class="logo">
-                <a href="/">
+                <a href="./" aria-label="Cross Timbers Construction home">
                     <span class="logo-text">Cross Timbers</span>
                     <span class="logo-subtext">Construction</span>
                 </a>
             </div>
             
-            <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">
                 <span class="hamburger"></span>
             </button>
 
-            <nav class="main-nav">
+            <nav class="main-nav" id="main-nav" aria-label="Main">
                 <ul>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#about">About</a></li>
@@ -48,9 +113,9 @@
         <section class="hero">
             <div class="hero-overlay"></div>
             <div class="container hero-container">
-                <div class="hero-content reveal">
-                    <h1>Building Quality<br>Homes at a<br>Fair Price.</h1>
-                    <p class="hero-subtitle">New Home Construction, Remodels, and Additions in Middle Georgia. Exceptional craftsmanship with clear, honest communication.</p>
+                <div class="hero-content">
+                    <h1><span class="hero-eyebrow">Custom Home Builder &middot; Middle Georgia</span>Building Quality<br>Homes at a<br>Fair Price.</h1>
+                    <p class="hero-subtitle">New home construction, remodels, and additions in Milledgeville, Gray, Eatonton, and across Middle Georgia. Exceptional craftsmanship with clear, honest communication.</p>
                     <div class="hero-actions">
                         <a href="tel:5555555555" class="btn btn-primary btn-large">Call for a Quote</a>
                         <a href="mailto:info@crosstimbersconstruction.com" class="btn btn-secondary-outline btn-large">Email Us directly</a>
@@ -71,7 +136,7 @@
                     
                     <div class="editorial-row reveal">
                         <div class="editorial-image">
-                            <img src="images/eatonton-georgia-new-build1.jpg" alt="New Home Construction in Eatonton Georgia">
+                            <img src="images/eatonton-georgia-new-build1.webp" alt="New custom home construction in Eatonton, Georgia by Cross Timbers Construction" width="1400" height="1050" loading="lazy" decoding="async">
                         </div>
                         <div class="editorial-text card-elevated">
                             <span class="oversized-number">01</span>
@@ -82,7 +147,7 @@
 
                     <div class="editorial-row reversed reveal">
                         <div class="editorial-image">
-                            <img src="images/milledgeville-georgia-bathroom-remodel1.jpg" alt="Large Scale Bathroom Remodels in Milledgeville">
+                            <img src="images/milledgeville-georgia-bathroom-remodel1.webp" alt="Large-scale bathroom remodel in Milledgeville, Georgia" width="1400" height="1050" loading="lazy" decoding="async">
                         </div>
                         <div class="editorial-text card-elevated">
                             <span class="oversized-number">02</span>
@@ -93,7 +158,7 @@
 
                     <div class="editorial-row reveal" style="transition-delay: 0.2s;">
                         <div class="editorial-image">
-                            <img src="images/custom-additions.jpg" alt="Custom Additions & Covered Porches">
+                            <img src="images/custom-additions.webp" alt="Sunlit custom home addition with exposed wood beams and sliding glass doors in Middle Georgia" width="1400" height="1050" loading="lazy" decoding="async">
                         </div>
                         <div class="editorial-text card-elevated">
                             <span class="oversized-number">03</span>
@@ -113,7 +178,7 @@
                     <h2>Real Customer Reviews</h2>
                     <div class="google-rating">
                         <span class="rating-number">5.0</span>
-                        <div class="stars">
+                        <div class="stars" role="img" aria-label="Rated 5 out of 5 stars">
                             ★★★★★
                         </div>
                         <span class="review-count">Based on 42 Google Reviews</span>
@@ -125,10 +190,10 @@
                         <div class="review-header">
                             <div class="reviewer-initial">M</div>
                             <div class="reviewer-info">
-                                <h4>Michael T.</h4>
-                                <div class="stars">★★★★★</div>
+                                <p class="reviewer-name">Michael T.</p>
+                                <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
                             </div>
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/google/google-original.svg" alt="Google Logo" class="google-g">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/google/google-original.svg" alt="Google review" class="google-g" width="20" height="20" loading="lazy">
                         </div>
                         <p class="review-text">"James and his team did an incredible job on our custom wrap-around porch. The craftsmanship is flawless and they finished exactly on budget. Highly recommend!"</p>
                     </div>
@@ -137,10 +202,10 @@
                         <div class="review-header">
                             <div class="reviewer-initial">S</div>
                             <div class="reviewer-info">
-                                <h4>Sarah J.</h4>
-                                <div class="stars">★★★★★</div>
+                                <p class="reviewer-name">Sarah J.</p>
+                                <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
                             </div>
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/google/google-original.svg" alt="Google Logo" class="google-g">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/google/google-original.svg" alt="Google review" class="google-g" width="20" height="20" loading="lazy">
                         </div>
                         <p class="review-text">"We hired Cross Timbers for a major kitchen remodel. They were communicative every step of the way. The end result is a magazine-quality kitchen that we absolutely love."</p>
                     </div>
@@ -149,10 +214,10 @@
                         <div class="review-header">
                             <div class="reviewer-initial">D</div>
                             <div class="reviewer-info">
-                                <h4>David R.</h4>
-                                <div class="stars">★★★★★</div>
+                                <p class="reviewer-name">David R.</p>
+                                <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
                             </div>
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/google/google-original.svg" alt="Google Logo" class="google-g">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/google/google-original.svg" alt="Google review" class="google-g" width="20" height="20" loading="lazy">
                         </div>
                         <p class="review-text">"Honest, reliable, and incredibly skilled. If you need a custom home built in Middle Georgia, Cross Timbers is the only company you should call. Five stars all the way."</p>
                     </div>
@@ -165,23 +230,30 @@
             <div class="container relative-container">
                 <div class="section-header text-center reveal">
                     <h2>The Cross Timbers Difference</h2>
-                    <p>Honest communication, transparent pricing, and unparalleled craftsmanship.</p>
+                    <p style="color: var(--clr-accent-wood); font-weight: 700; font-size: 1.5rem;">Built with Purpose. Built with Integrity.</p>
                 </div>
                 <div class="about-grid">
                     <div class="about-content reveal">
-                        <h2 class="structural-border">Who We Are</h2>
-                        <p>At Cross Timbers Construction, our core philosophy is simple: <strong>We build quality homes at a fair price with good communication.</strong></p>
-                        <p>You won't be left in the dark wondering about timelines or budgets. We believe that building or renovating a home should be an exciting journey, not a stressful ordeal. We partner with you every step of the way to ensure the final result exceeds your expectations.</p>
+                        <h3 class="structural-border about-subheading">Who We Are</h3>
+                        <p>We are two Christian men, husbands, fathers, and friends who share a passion for building quality homes and serving others through the work God has called us to do. Our faith and commitment to family are at the heart of who we are, and those values guide the way we conduct our business, serve our clients, and approach every home we build.</p>
+                        <p>Our company was built on a simple belief: <strong>when you work hard for something, you deserve to know it’s being built the right way.</strong></p>
                         <ul class="check-list">
                             <li>✓ Quality Craftsmanship</li>
                             <li>✓ Transparent Pricing</li>
                             <li>✓ Consistent Communication</li>
                         </ul>
-                        <p><em>[Our Story section to be added here soon...]</em></p>
+
                     </div>
-                    <div class="about-image reveal" style="transition-delay: 0.2s;">
-                        <img src="images/ctdifference.jpg" alt="The Cross Timbers Difference" class="about-img">
+
+                    <div class="about-image reveal" style="transition-delay: 0.2s; align-self: start;">
+                        <img src="images/ctdifference.webp" alt="Home addition with vaulted pine ceiling, exposed beams, and wood slat accent wall built by Cross Timbers Construction" class="about-img" width="1920" height="1440" loading="lazy" decoding="async">
                     </div>
+                </div>
+
+                <div class="investment-content text-center reveal" style="max-width: 800px; margin: var(--space-xxl) auto 0; padding-top: var(--space-xl); border-top: 1px solid rgba(0,0,0,0.1);">
+                    <h2 style="font-size: 2rem; margin-bottom: var(--space-md);">Your Home is an Investment</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: var(--space-md);">We understand that building a home is one of the biggest investments you and your family will ever make. You’ve worked hard for your money, and we believe every dollar should be treated with respect. Our goal is to help you get the most out of your investment by focusing on quality where it matters, making thoughtful decisions, and never cutting corners simply to get the job done faster.</p>
+                    <p style="font-size: 1.1rem; line-height: 1.8;">With years of construction experience and long-standing relationships with trusted subcontractors and craftsmen, we’ve built a team we can depend on. Those relationships matter. They allow us to work with people we know, trust, and hold to the same high standards of workmanship and integrity.</p>
                 </div>
             </div>
         </section>
@@ -195,19 +267,19 @@
                 </div>
                 <div class="portfolio-grid reveal">
                     <div class="portfolio-item portfolio-item-large">
-                        <img src="images/eatonton-georgia-new-build-2.jpg" alt="Luxury Custom Southern Home Exterior Eatonton">
+                        <img src="images/eatonton-georgia-new-build-2.webp" alt="Luxury custom Southern home exterior in Eatonton, Georgia" width="1400" height="1050" loading="lazy" decoding="async">
                         <div class="portfolio-overlay">
                             <h3>Custom Builds</h3>
                         </div>
                     </div>
                     <div class="portfolio-item">
-                        <img src="images/milledgeville-georgia-poolhouse-remodel1.jpg" alt="Custom Poolhouse Remodel Milledgeville">
+                        <img src="images/milledgeville-georgia-poolhouse-remodel1.webp" alt="Custom pool house remodel in Milledgeville, Georgia" width="1400" height="1050" loading="lazy" decoding="async">
                         <div class="portfolio-overlay">
                             <h3>Poolhouse Remodels</h3>
                         </div>
                     </div>
                     <div class="portfolio-item">
-                        <img src="images/milledgeville-custom-kitchen-1.jpg" alt="Custom Kitchen Remodel in Milledgeville">
+                        <img src="images/milledgeville-custom-kitchen-1.webp" alt="Custom kitchen remodel in Milledgeville, Georgia" width="1400" height="1050" loading="lazy" decoding="async">
                         <div class="portfolio-overlay">
                             <h3>Custom Kitchens</h3>
                         </div>
@@ -219,11 +291,29 @@
             </div>
         </section>
 
+        <!-- Faith Foundation Banner -->
+        <section class="faith-banner" style="background-color: var(--clr-navy); color: var(--clr-white); padding: var(--space-xxl) 0;">
+            <div class="container reveal">
+                <div class="faith-content text-center" style="max-width: 900px; margin: 0 auto;">
+                    <h2 style="color: var(--clr-white); font-size: 2.2rem; margin-bottom: var(--space-lg);">Faith is the foundation of how we work.</h2>
+                    <p style="font-size: 1.15rem; line-height: 1.8; margin-bottom: var(--space-xl); color: rgba(255,255,255,0.9);">As Christian business owners, our faith guides the way we approach our work, our clients, and the commitments we make. We believe we are called to serve God through everything we do, and that includes the homes we build and the families we have the privilege of serving.</p>
+                    
+                    <blockquote class="faith-quote" style="border-left: 4px solid var(--clr-accent-wood); padding-left: var(--space-lg); margin-bottom: var(--space-lg); text-align: left;">
+                        <p style="font-size: 1.4rem; font-style: italic; margin-bottom: var(--space-sm);">“Whatever you do, work at it with all your heart, as working for the Lord, not for human masters.”</p>
+                        <footer style="color: var(--clr-accent-wood); font-weight: 700;">— Colossians 3:23</footer>
+                    </blockquote>
+                    
+                    <p style="font-size: 1.15rem; line-height: 1.8; color: rgba(255,255,255,0.9);">That verse reflects the standard we strive for every day. We want our work to reflect our faith—with honesty, excellence, dependability, and pride in a job well done.</p>
+                    <p style="font-size: 1.15rem; line-height: 1.8; color: rgba(255,255,255,0.9); margin-top: var(--space-md);">As licensed contractors, we take pride in paying attention to the details and doing things the right way. From the structure of your home to the finishing touches, we believe quality construction is about more than what you can see—it’s about building something that will serve your family well for years to come.</p>
+                </div>
+            </div>
+        </section>
+
         <!-- Service Area Section -->
         <section id="service-areas" class="service-area section-padding text-center">
             <div class="container reveal">
                 <h2>Proudly Serving Middle Georgia</h2>
-                <p>We are a local builder dedicated to improving our community. We serve the following counties:</p>
+                <p>We are a local builder dedicated to improving our community. We build and remodel homes in Milledgeville, Gray, Eatonton, Gordon, Irwinton, Sparta, and the surrounding counties:</p>
                 <div class="counties-list">
                     <span class="county-badge">Baldwin County</span>
                     <span class="county-badge">Jones County</span>
@@ -235,14 +325,17 @@
         </section>
 
         <!-- Call to Action Banner -->
-        <section class="cta-banner">
-            <div class="container cta-container reveal">
-                <div class="cta-text">
-                    <h2>Ready to start your project?</h2>
-                    <p>Contact us today to discuss your vision and get a fair, honest quote.</p>
-                </div>
-                <div class="cta-buttons">
-                    <a href="tel:5555555555" class="btn btn-primary btn-large">Call Now</a>
+        <section class="cta-banner" id="contact">
+            <div class="container text-center reveal" style="max-width: 800px;">
+                <h2 style="font-size: 2.2rem; margin-bottom: var(--space-md); color: var(--clr-navy);">Let’s Build It Right.</h2>
+                <p style="font-size: 1.15rem; line-height: 1.8; margin-bottom: var(--space-md);">We also know that building a home can feel overwhelming. There are countless decisions to make, and we believe you shouldn’t have to navigate them alone. We’ll be there throughout the process to answer questions, offer honest guidance, and help you make choices that make sense for your family and your investment.</p>
+                <p style="font-size: 1.15rem; line-height: 1.8; margin-bottom: var(--space-md);">At the end of the day, we’re not just building houses. We’re helping build the place where your family will gather, grow, celebrate, and make memories for years to come.</p>
+                
+                <p class="story-closing" style="font-size: 1.3rem; color: var(--clr-accent-wood); font-weight: 700; margin-top: var(--space-xl); margin-bottom: var(--space-sm);">You worked hard for your home. We’ll work just as hard to make sure it’s worth&nbsp;it.</p>
+                <p class="story-closing" style="font-size: 1.3rem; color: var(--clr-navy); font-weight: 700; margin-bottom: var(--space-xl);">Built on faith. Built with integrity. Built for your family.</p>
+                
+                <div class="cta-buttons" style="justify-content: center; display: flex; gap: var(--space-md);">
+                    <a href="tel:5555555555" class="btn btn-primary btn-large">Call Us Today</a>
                 </div>
             </div>
         </section>
@@ -262,7 +355,7 @@
             </div>
             
             <div class="footer-col">
-                <h4>Contact Us</h4>
+                <h3 class="footer-heading">Contact Us</h3>
                 <ul>
                     <li><a href="tel:5555555555">(555) 555-5555</a></li>
                     <li><a href="mailto:info@crosstimbersconstruction.com">info@crosstimbersconstruction.com</a></li>
@@ -271,7 +364,7 @@
             </div>
             
             <div class="footer-col">
-                <h4>Quick Links</h4>
+                <h3 class="footer-heading">Quick Links</h3>
                 <ul>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#about">About</a></li>

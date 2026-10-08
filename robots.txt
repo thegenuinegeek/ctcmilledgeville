@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# TODO: update to the client's real domain at launch
+Sitemap: https://thegenuinegeek.github.io/ctcmilledgeville/sitemap.xml
