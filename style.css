@@ -205,13 +205,19 @@ ul {
     font-family: var(--font-heading);
     font-size: 6rem;
     font-weight: 800;
-    color: var(--clr-gray-light);
+    /* Stamped-in (letterpress) look: slightly darker than the page,
+       crisp white lower edge and dark upper edge, no blur */
+    color: #D9E3D9;
+    text-shadow:
+        0 3px 0 #FFFFFF,
+        0 4px 0 rgba(156, 122, 84, 0.35),
+        0 -1px 0 rgba(20, 40, 25, 0.35);
     line-height: 0.8;
     position: absolute;
     top: -2rem;
     left: 0;
     z-index: -1;
-    opacity: 0.6;
+    opacity: 1;
 }
 
 .oversized-bg-text {
@@ -566,13 +572,7 @@ ul {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Depth on section headings: letterpress (stamped-in) look, zero blur */
-.section-header h2 {
-    text-shadow:
-        0 3px 0 #FFFFFF,
-        0 4px 0 rgba(156, 122, 84, 0.35),
-        0 -1px 0 rgba(20, 40, 25, 0.6);
-}
+/* Section headings: clean, no text shadow */
 
 /* Shared section subtitle */
 .section-subtitle {
