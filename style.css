@@ -10,14 +10,20 @@ Text Domain: crosstimbers
 /* --- CSS Variables & Design Tokens --- */
 :root {
     /* Color Palette */
-    --clr-navy: #1B2A47;
-    --clr-charcoal: #2D3748;
-    --clr-gray-dark: #4A5568;
-    --clr-gray-light: #EDF2F7;
+    /* Brand green sampled from ctc-milledgeville-logo-full.png.
+       Variable name kept as --clr-navy so all existing rules inherit it. */
+    --clr-brand-green: #365E3E;
+    --clr-brand-green-dark: #24412A;
+    --clr-navy: var(--clr-brand-green);
+    --clr-charcoal: #26302A;
+    --clr-gray-dark: #3F4A42;
+    --clr-gray-light: #EEF3EE;
     --clr-white: #FFFFFF;
     
-    --clr-accent-wood: #D97736;
-    --clr-accent-wood-hover: #BF652B;
+    /* Brown khaki accent - complements the brand green */
+    --clr-accent-wood: #9C7A54;
+    --clr-accent-wood-hover: #7F6243;
+    --clr-cream: #F5F0E1;
     
     /* Typography */
     --font-heading: 'Montserrat', sans-serif;
@@ -105,9 +111,24 @@ ul {
 
 .bg-texture {
     background-color: var(--clr-gray-light);
-    /* Subtle CSS wood slat / pinstripe texture */
-    background-image: linear-gradient(90deg, rgba(0,0,0,0.02) 50%, transparent 50%);
-    background-size: 80px 100%;
+    /* Diagonal wood-slat texture: seamless tile, 120px bars.
+       Tile = 240px stripe period * sqrt(2) so the pattern repeats cleanly. */
+    --stripe: rgba(0,0,0,0.025);
+    background-image: linear-gradient(45deg,
+        var(--stripe) 25%, transparent 25%, transparent 50%,
+        var(--stripe) 50%, var(--stripe) 75%, transparent 75%);
+    background-size: 339.41px 339.41px;
+    /* Anchored to the bottom edge so it meets the section below at the seam */
+    background-position: left bottom;
+}
+
+/* Mirror image in the Difference section, anchored to its top edge,
+   so the stripes form a clean "V" where the two sections meet */
+.about.bg-texture {
+    background-image: linear-gradient(135deg,
+        var(--stripe) 25%, transparent 25%, transparent 50%,
+        var(--stripe) 50%, var(--stripe) 75%, transparent 75%);
+    background-position: left top;
 }
 
 .text-center {
@@ -150,12 +171,12 @@ ul {
 
 .btn-primary {
     background-color: var(--clr-accent-wood);
-    color: var(--clr-white);
+    color: var(--clr-cream);
 }
 
 .btn-primary:hover {
     background-color: var(--clr-accent-wood-hover);
-    color: var(--clr-white);
+    color: var(--clr-cream);
 }
 
 .btn-secondary-outline {
@@ -209,7 +230,7 @@ ul {
 
 /* --- Header & Navigation --- */
 .site-header {
-    background-color: var(--clr-white);
+    background-color: var(--clr-brand-green);
     border-top: 6px solid var(--clr-accent-wood);
     padding: var(--space-md) 0;
     position: sticky;
@@ -224,10 +245,27 @@ ul {
     align-items: center;
 }
 
-.logo a {
-    display: flex;
-    flex-direction: column;
+.logo a,
+.footer-logo {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    column-gap: 0.75rem;
+    align-items: center;
+    justify-content: start;
 }
+
+.logo-mark {
+    grid-row: 1 / span 2;
+    height: 56px;
+    width: auto;
+}
+
+.site-header .logo-text { color: var(--clr-cream); }
+.site-header .logo-subtext { font-weight: 800; font-size: 0.8rem; }
+
+.logo .logo-text { align-self: end; }
+.logo .logo-subtext { align-self: start; }
 
 .logo-text {
     font-family: var(--font-heading);
@@ -261,7 +299,7 @@ ul {
 }
 
 .main-nav a {
-    color: var(--clr-navy);
+    color: var(--clr-cream);
     font-weight: 700;
     font-size: 0.95rem;
     text-transform: uppercase;
@@ -284,7 +322,7 @@ ul {
     display: block;
     width: 25px;
     height: 3px;
-    background-color: var(--clr-navy);
+    background-color: var(--clr-cream);
     position: relative;
     transition: var(--transition);
 }
@@ -294,7 +332,7 @@ ul {
     position: absolute;
     width: 100%;
     height: 3px;
-    background-color: var(--clr-navy);
+    background-color: var(--clr-cream);
     left: 0;
     transition: var(--transition);
 }
@@ -303,6 +341,37 @@ ul {
 .hamburger::after { top: 8px; }
 
 /* --- Hero Section --- */
+.hero-brand {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: var(--space-xl);
+    align-items: center;
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-lg);
+    border-bottom: 1px solid rgba(245, 240, 225, 0.15);
+}
+
+.hero-logo {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    justify-self: center;
+    filter: drop-shadow(0 0 18px rgba(245, 240, 225, 0.35)) drop-shadow(0 6px 14px rgba(0, 0, 0, 0.5));
+}
+
+.hero-headline {
+    border-left: 5px solid var(--clr-accent-wood);
+    padding-left: var(--space-lg);
+}
+
+.hero-headline .hero-eyebrow {
+    margin-bottom: var(--space-sm);
+}
+
+.hero-brand h1 {
+    margin-bottom: 0;
+    line-height: 1.1;
+}
 .hero {
     position: relative;
     min-height: 80vh;
@@ -359,7 +428,7 @@ ul {
 .hero-content {
     background-color: var(--clr-navy);
     padding: var(--space-xl);
-    max-width: 750px;
+    max-width: 900px;
     box-shadow: 20px 20px 0 var(--clr-accent-wood);
     margin-left: 0;
     /* CSS-only entrance: starts immediately, no waiting on JS (better LCP) */
@@ -418,15 +487,37 @@ ul {
     margin: 0 auto var(--space-xl);
 }
 
+/* Bold section headings with a khaki rule underneath */
+.section-header h2 {
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--clr-brand-green);
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    padding-bottom: var(--space-md);
+    position: relative;
+}
+
+.section-header h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 5px;
+    background: var(--clr-accent-wood);
+    border-radius: 3px;
+}
+
 .services .section-header {
     max-width: 100%;
 }
 
 .services .section-header h2 {
-    color: var(--clr-accent-wood);
     font-size: clamp(1.2rem, 4.5vw, 3.5rem);
     white-space: nowrap;
-    margin-bottom: var(--space-md);
+    margin-bottom: var(--space-lg);
 }
 
 .services-editorial {
@@ -900,7 +991,21 @@ ul {
     }
 
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+    }
+
+    .hero-brand {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+
+    .hero-logo {
+        max-width: 200px;
+        justify-self: start;
+    }
+
+    .hero-headline {
+        padding-left: var(--space-md);
     }
     
     .cta-container {
