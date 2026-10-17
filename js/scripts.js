@@ -40,12 +40,25 @@ document.addEventListener('DOMContentLoaded', () => {
             return firstCard ? firstCard.offsetWidth + 32 : 360;
         };
 
-        prevCarouselBtn.addEventListener('click', () => {
-            track.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
+        prevCarouselBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const step = getScrollStep();
+            if (track.scrollLeft <= 10) {
+                track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' });
+            } else {
+                track.scrollBy({ left: -step, behavior: 'smooth' });
+            }
         });
 
-        nextCarouselBtn.addEventListener('click', () => {
-            track.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+        nextCarouselBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const step = getScrollStep();
+            const maxScroll = track.scrollWidth - track.clientWidth;
+            if (track.scrollLeft >= maxScroll - 10) {
+                track.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                track.scrollBy({ left: step, behavior: 'smooth' });
+            }
         });
     }
 
@@ -100,9 +113,9 @@ document.addEventListener('DOMContentLoaded', () => {
             showSlide(currentIndex + 1);
         });
 
-        // Close when clicking the blurred backdrop outside the image
+        // Close when clicking anywhere on the blurred backdrop outside the image/buttons
         lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) {
+            if (!e.target.closest('.lightbox-img, .lightbox-nav, .lightbox-close')) {
                 closeLightbox();
             }
         });
