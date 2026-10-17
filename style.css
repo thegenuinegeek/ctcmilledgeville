@@ -927,7 +927,7 @@ ul {
 .cta-banner {
     background-color: var(--clr-gray-light);
     padding: var(--space-xxl) 0;
-    color: var(--clr-text);
+    color: var(--clr-charcoal);
 }
 
 .cta-container {
@@ -945,9 +945,11 @@ ul {
 
 /* --- Footer --- */
 .site-footer {
-    background-color: var(--clr-charcoal);
-    color: var(--clr-gray-light);
+    background-color: var(--clr-brand-green);
+    border-top: 6px solid var(--clr-accent-wood);
+    color: var(--clr-cream);
     padding: var(--space-xl) 0 var(--space-md);
+    box-shadow: inset 0 1px 0 rgba(245, 240, 225, 0.12);
 }
 
 .footer-grid {
@@ -958,13 +960,15 @@ ul {
 }
 
 .footer-col .footer-heading {
-    color: var(--clr-white);
+    color: var(--clr-cream);
     font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     margin-bottom: var(--space-md);
 }
 
 .footer-col a {
-    color: var(--clr-gray-light);
+    color: var(--clr-cream);
 }
 
 .footer-col a:hover {
@@ -976,23 +980,36 @@ ul {
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(245, 240, 225, 0.15);
     padding-top: var(--space-md);
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: var(--space-sm);
     font-size: 0.85rem;
 }
 
 .agency-credit {
-    color: var(--clr-gray-dark);
+    color: rgba(245, 240, 225, 0.8);
 }
 
 .footer-logo {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.site-footer .logo-text {
+    color: var(--clr-cream);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35), 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.site-footer .logo-subtext {
+    font-weight: 800;
+    font-size: 0.8rem;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35), 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.site-footer .logo-mark {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35));
 }
 
 /* --- Media Queries --- */
