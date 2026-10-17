@@ -852,24 +852,72 @@ ul {
     box-shadow: -20px 20px 0 var(--clr-navy);
 }
 
-/* --- Portfolio / Our Work Section --- */
+/* --- Portfolio / Our Work Section (Horizontal Scroll + Lightbox) --- */
+section[id] {
+    scroll-margin-top: 90px;
+}
+
 .portfolio {
     background-color: var(--clr-white);
 }
 
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: repeat(2, 350px);
-    gap: var(--space-md);
+.portfolio-carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.portfolio-track {
+    display: flex;
+    gap: var(--space-lg);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: var(--space-sm) var(--space-xs, 0.25rem) var(--space-lg);
+    width: 100%;
+    scrollbar-width: thin;
+    scrollbar-color: var(--clr-accent-wood) var(--clr-gray-light);
+    -webkit-overflow-scrolling: touch;
+}
+
+.portfolio-track:focus {
+    outline: none;
+}
+
+.portfolio-track::-webkit-scrollbar {
+    height: 8px;
+}
+
+.portfolio-track::-webkit-scrollbar-track {
+    background: var(--clr-gray-light);
+    border-radius: 999px;
+}
+
+.portfolio-track::-webkit-scrollbar-thumb {
+    background: var(--clr-accent-wood);
+    border-radius: 999px;
 }
 
 .portfolio-item {
+    flex: 0 0 calc((100% - (var(--space-lg) * 2)) / 2.5);
+    min-width: 320px;
+    height: 400px;
+    scroll-snap-align: start;
     position: relative;
-    border-radius: var(--border-radius);
+    border-radius: 10px;
     overflow: hidden;
-    cursor: pointer;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+    cursor: zoom-in;
+    border: none;
+    padding: 0;
+    background: var(--clr-charcoal);
+    text-align: left;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.16);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 38px rgba(0, 0, 0, 0.24);
 }
 
 .portfolio-item img {
@@ -879,8 +927,8 @@ ul {
     transition: transform 0.6s ease;
 }
 
-.portfolio-item-large {
-    grid-row: span 2;
+.portfolio-item:hover img {
+    transform: scale(1.06);
 }
 
 .portfolio-overlay {
@@ -888,21 +936,189 @@ ul {
     bottom: 0;
     left: 0;
     width: 100%;
-    background: linear-gradient(to top, rgba(36, 65, 42, 0.95), transparent);
-    padding: var(--space-lg);
-    color: var(--clr-white);
-    transform: translateY(20px);
-    opacity: 0;
+    background: linear-gradient(to top, rgba(24, 45, 29, 0.94) 0%, rgba(24, 45, 29, 0.55) 60%, transparent 100%);
+    padding: var(--space-xl) var(--space-lg) var(--space-md);
+    color: var(--clr-cream);
     transition: var(--transition);
 }
 
-.portfolio-item:hover img {
-    transform: scale(1.05);
+.portfolio-overlay h3 {
+    color: var(--clr-cream);
+    font-size: 1.25rem;
+    margin-bottom: 0;
 }
 
-.portfolio-item:hover .portfolio-overlay {
-    transform: translateY(0);
+.portfolio-tag {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--clr-accent-wood);
+    margin-bottom: 0.25rem;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid rgba(245, 240, 225, 0.35);
+    background-color: var(--clr-brand-green);
+    color: var(--clr-cream);
+    font-size: 1.25rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+    transition: var(--transition);
+}
+
+.carousel-btn:hover {
+    background-color: var(--clr-accent-wood);
+    transform: translateY(-50%) scale(1.06);
+}
+
+.carousel-btn-prev {
+    left: -18px;
+}
+
+.carousel-btn-next {
+    right: -18px;
+}
+
+.portfolio-hint {
+    font-size: 0.9rem;
+    color: var(--clr-gray-dark);
+    margin-top: var(--space-sm);
+}
+
+/* --- Portfolio Lightbox Modal (Blurred Site Backdrop) --- */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(20, 35, 23, 0.78);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-lg);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.28s ease, visibility 0.28s ease;
+}
+
+.lightbox.active {
     opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.lightbox-figure {
+    max-width: min(1100px, 88vw);
+    max-height: 86vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lightbox-img {
+    max-width: 100%;
+    max-height: 76vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    border: 2px solid rgba(245, 240, 225, 0.2);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55);
+    transform: scale(0.96);
+    transition: transform 0.28s ease;
+}
+
+.lightbox.active .lightbox-img {
+    transform: scale(1);
+}
+
+.lightbox-caption {
+    margin-top: var(--space-md);
+    color: var(--clr-cream);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    text-align: center;
+}
+
+.lightbox-counter {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--clr-accent-wood);
+    background: rgba(0, 0, 0, 0.35);
+    padding: 0.2rem 0.65rem;
+    border-radius: 999px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 24px;
+    right: 28px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid rgba(245, 240, 225, 0.3);
+    background: rgba(36, 65, 42, 0.85);
+    color: var(--clr-cream);
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.lightbox-close:hover {
+    background: var(--clr-accent-wood);
+}
+
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 1px solid rgba(245, 240, 225, 0.3);
+    background: rgba(36, 65, 42, 0.85);
+    color: var(--clr-cream);
+    font-size: 1.4rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.lightbox-nav:hover {
+    background: var(--clr-accent-wood);
+}
+
+.lightbox-prev {
+    left: 24px;
+}
+
+.lightbox-next {
+    right: 24px;
 }
 
 /* --- Service Areas Section --- */
@@ -1063,18 +1279,34 @@ ul {
         box-shadow: -10px 10px 0 var(--clr-navy);
     }
     
-    .portfolio-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-    }
-    
     .portfolio-item {
-        height: 300px;
+        flex: 0 0 82%;
+        min-width: 260px;
+        height: 320px;
     }
-    
-    .portfolio-item-large {
-        grid-row: auto;
-        height: 350px;
+
+    .carousel-btn {
+        display: none;
+    }
+
+    .lightbox-nav {
+        width: 42px;
+        height: 42px;
+        font-size: 1.15rem;
+    }
+
+    .lightbox-prev {
+        left: 10px;
+    }
+
+    .lightbox-next {
+        right: 10px;
+    }
+
+    .lightbox-caption {
+        flex-direction: column;
+        gap: 0.35rem;
+        font-size: 0.95rem;
     }
     
     .hero-content {

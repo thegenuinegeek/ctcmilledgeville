@@ -28,7 +28,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=20261017a">
+    <link rel="stylesheet" href="style.css?v=20261017b">
     <!-- Only hide .reveal content when JS is running, so crawlers / no-JS users always see it -->
     <script>document.documentElement.classList.add('js');</script>
 
@@ -271,29 +271,73 @@
             <div class="container">
                 <div class="section-header text-center reveal">
                     <h2>Our Work</h2>
-                    <p>A showcase of our recent high-end custom builds and luxury remodels across Middle Georgia.</p>
+                    <p class="section-subtitle">A showcase of our recent custom builds and remodels across Middle Georgia.</p>
                 </div>
-                <div class="portfolio-grid reveal">
-                    <div class="portfolio-item portfolio-item-large">
-                        <img src="images/eatonton-georgia-new-build-2.webp" alt="Luxury custom Southern home exterior in Eatonton, Georgia" width="1400" height="1050" loading="lazy" decoding="async">
-                        <div class="portfolio-overlay">
-                            <h3>Custom Builds</h3>
-                        </div>
+
+                <div class="portfolio-carousel-wrapper reveal">
+                    <button class="carousel-btn carousel-btn-prev" type="button" aria-label="Scroll gallery left">
+                        &#10094;
+                    </button>
+
+                    <!-- To add new job photos later: simply copy and paste any .portfolio-item block below -->
+                    <div class="portfolio-track" id="portfolioTrack" tabindex="0" aria-label="Project photo gallery">
+                        <button class="portfolio-item" type="button" data-caption="Custom Home Build — Eatonton, GA">
+                            <img src="images/eatonton-georgia-new-build-2.webp" alt="Luxury custom Southern home exterior in Eatonton, Georgia" width="1400" height="1050" loading="lazy" decoding="async">
+                            <div class="portfolio-overlay">
+                                <span class="portfolio-tag">Eatonton, GA</span>
+                                <h3>Custom Home Build</h3>
+                            </div>
+                        </button>
+
+                        <button class="portfolio-item" type="button" data-caption="Poolhouse Remodel — Milledgeville, GA">
+                            <img src="images/milledgeville-georgia-poolhouse-remodel1.webp" alt="Custom pool house remodel in Milledgeville, Georgia" width="1400" height="1050" loading="lazy" decoding="async">
+                            <div class="portfolio-overlay">
+                                <span class="portfolio-tag">Milledgeville, GA</span>
+                                <h3>Poolhouse Remodel</h3>
+                            </div>
+                        </button>
+
+                        <button class="portfolio-item" type="button" data-caption="Custom Kitchens — Milledgeville, GA">
+                            <img src="images/milledgeville-custom-kitchen-1.webp" alt="Custom kitchen remodel in Milledgeville, Georgia" width="1400" height="1050" loading="lazy" decoding="async">
+                            <div class="portfolio-overlay">
+                                <span class="portfolio-tag">Milledgeville, GA</span>
+                                <h3>Custom Kitchens</h3>
+                            </div>
+                        </button>
+
+                        <button class="portfolio-item" type="button" data-caption="New Home Construction — Eatonton, GA">
+                            <img src="images/eatonton-georgia-new-build1.webp" alt="New custom home construction in Eatonton, Georgia by Cross Timbers Construction" width="1400" height="1050" loading="lazy" decoding="async">
+                            <div class="portfolio-overlay">
+                                <span class="portfolio-tag">Eatonton, GA</span>
+                                <h3>New Home Construction</h3>
+                            </div>
+                        </button>
+
+                        <button class="portfolio-item" type="button" data-caption="Luxury Bathroom Remodel — Milledgeville, GA">
+                            <img src="images/milledgeville-georgia-bathroom-remodel1.webp" alt="Large-scale bathroom remodel in Milledgeville, Georgia" width="1400" height="1050" loading="lazy" decoding="async">
+                            <div class="portfolio-overlay">
+                                <span class="portfolio-tag">Milledgeville, GA</span>
+                                <h3>Bathroom Remodel</h3>
+                            </div>
+                        </button>
+
+                        <button class="portfolio-item" type="button" data-caption="Custom Wood Beam Addition — Middle Georgia">
+                            <img src="images/custom-additions.webp" alt="Sunlit custom home addition with exposed wood beams and sliding glass doors in Middle Georgia" width="1400" height="1050" loading="lazy" decoding="async">
+                            <div class="portfolio-overlay">
+                                <span class="portfolio-tag">Middle Georgia</span>
+                                <h3>Custom Additions</h3>
+                            </div>
+                        </button>
                     </div>
-                    <div class="portfolio-item">
-                        <img src="images/milledgeville-georgia-poolhouse-remodel1.webp" alt="Custom pool house remodel in Milledgeville, Georgia" width="1400" height="1050" loading="lazy" decoding="async">
-                        <div class="portfolio-overlay">
-                            <h3>Poolhouse Remodels</h3>
-                        </div>
-                    </div>
-                    <div class="portfolio-item">
-                        <img src="images/milledgeville-custom-kitchen-1.webp" alt="Custom kitchen remodel in Milledgeville, Georgia" width="1400" height="1050" loading="lazy" decoding="async">
-                        <div class="portfolio-overlay">
-                            <h3>Custom Kitchens</h3>
-                        </div>
-                    </div>
+
+                    <button class="carousel-btn carousel-btn-next" type="button" aria-label="Scroll gallery right">
+                        &#10095;
+                    </button>
                 </div>
-                <div class="text-center" style="margin-top: var(--space-xl);">
+
+                <p class="portfolio-hint text-center">Swipe or use arrows to browse &middot; Click any photo to enlarge</p>
+
+                <div class="text-center" style="margin-top: var(--space-lg);">
                     <a href="#contact" class="btn btn-primary btn-large">Start Your Project</a>
                 </div>
             </div>
@@ -387,7 +431,19 @@
             <p class="agency-credit">Designed to convert by Genuine Geek Media LLC.</p>
         </div>
     </footer>
-    <!-- /WP: Footer -->
+    <!-- Portfolio Lightbox Modal -->
+    <div class="lightbox" id="portfolioLightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Project photo viewer">
+        <button class="lightbox-close" type="button" aria-label="Close photo viewer">&times;</button>
+        <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous photo">&#10094;</button>
+        <figure class="lightbox-figure">
+            <img class="lightbox-img" id="lightboxImg" src="" alt="">
+            <figcaption class="lightbox-caption">
+                <span id="lightboxCaptionText"></span>
+                <span class="lightbox-counter" id="lightboxCounter"></span>
+            </figcaption>
+        </figure>
+        <button class="lightbox-nav lightbox-next" type="button" aria-label="Next photo">&#10095;</button>
+    </div>
 
     <script src="js/scripts.js"></script>
 </body>
