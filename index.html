@@ -181,52 +181,28 @@
             </div>
         </section>
 
-        <!-- Google Reviews Placeholder Section (Commented out until Google Business Profile reviews are live)
+        <!-- Google Reviews Section Template (Enable once Google Business Profile feed is connected)
         <section class="reviews section-padding bg-texture">
             <div class="container">
                 <div class="section-header text-center reveal">
-                    <h2>Real Customer Reviews</h2>
+                    <h2>Customer Reviews</h2>
                     <div class="google-rating">
-                        <span class="rating-number">5.0</span>
-                        <div class="stars" role="img" aria-label="Rated 5 out of 5 stars">
-                            ★★★★★
-                        </div>
-                        <span class="review-count">Based on 42 Google Reviews</span>
+                        <span class="rating-number">{{RATING}}</span>
+                        <div class="stars" role="img" aria-label="Star rating">★★★★★</div>
+                        <span class="review-count">{{REVIEW_COUNT}}</span>
                     </div>
                 </div>
                 <div class="reviews-grid reveal">
                     <div class="review-card">
                         <div class="review-header">
-                            <div class="reviewer-initial">M</div>
+                            <div class="reviewer-initial">{{INITIAL}}</div>
                             <div class="reviewer-info">
-                                <p class="reviewer-name">Michael T.</p>
+                                <p class="reviewer-name">{{REVIEWER_NAME}}</p>
                                 <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
                             </div>
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/google/google-original.svg" alt="Google review" class="google-g" width="20" height="20" loading="lazy">
                         </div>
-                        <p class="review-text">"James and his team did an incredible job on our custom wrap-around porch. The craftsmanship is flawless and they finished exactly on budget. Highly recommend!"</p>
-                    </div>
-                    <div class="review-card">
-                        <div class="review-header">
-                            <div class="reviewer-initial">S</div>
-                            <div class="reviewer-info">
-                                <p class="reviewer-name">Sarah J.</p>
-                                <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
-                            </div>
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/google/google-original.svg" alt="Google review" class="google-g" width="20" height="20" loading="lazy">
-                        </div>
-                        <p class="review-text">"We hired Cross Timbers for a major kitchen remodel. They were communicative every step of the way. The end result is a magazine-quality kitchen that we absolutely love."</p>
-                    </div>
-                    <div class="review-card">
-                        <div class="review-header">
-                            <div class="reviewer-initial">D</div>
-                            <div class="reviewer-info">
-                                <p class="reviewer-name">David R.</p>
-                                <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
-                            </div>
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/google/google-original.svg" alt="Google review" class="google-g" width="20" height="20" loading="lazy">
-                        </div>
-                        <p class="review-text">"Honest, reliable, and incredibly skilled. If you need a custom home built in Middle Georgia, Cross Timbers is the only company you should call. Five stars all the way."</p>
+                        <p class="review-text">"{{REVIEW_TEXT}}"</p>
                     </div>
                 </div>
             </div>
